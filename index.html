@@ -1,10 +1,34 @@
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <style>
+            /* CSS styles for the 3D effect */
+            .image-container {
+                perspective: 800px; /* Adjust the perspective value to control the depth of the 3D effect */
+            }
+    
+            .image {
+                width: 736px;
+                height: 1297px;
+                margin: 20px;
+                transform: rotateY(20deg); /* Adjust the rotation angle to change the 3D effect */
+                transition: transform 0.5s ease; /* Add a smooth transition effect */
+            }
+    
+            /* Hover effect: Rotate the image when hovering */
+            .image:hover {
+                transform: rotateY(0deg); /* Return to its original position */
+            }
+        </style>
     </head>
 <body>
     <h1>Home</h1>
     <p>Test Test</p>
     <button type="button" class="btn btn-primary">Basic</button>
+    <div class="image-container">
+        <img class="image" src="haerinnn.jpeg" alt="3D Image">
+    </div>
 </body>
 </html>
