@@ -17,7 +17,12 @@
 
 .menu button {
     background: none;
-    border: none; /* You need to specify 'none' to remove the border */
+    border: none;
     cursor: pointer;
     font-size: 35px;
+}
+.made {
+    position: absolute;
+    top: 32px;
+    right: 0;
 }
