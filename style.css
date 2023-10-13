@@ -1,0 +1,23 @@
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.menu button {
+    background: none;
+    border: none; /* You need to specify 'none' to remove the border */
+    cursor: pointer;
+    font-size: 35px;
+}
