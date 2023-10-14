@@ -6,28 +6,78 @@
     <title>Mini GYM Counter</title>
     <link rel="icon" type="image/png" href="Picture/mini gym.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
 </head>
+
 <body>
     <header>
         <nav>
-            <ul class="menu">
-                <li class="home"><button onclick="location.href='index.html'"><image src="Picture/mini mini gym.png"></button></li>
-                <li><button onclick="location.href='source code.html'">Code</button></li>
-                <li><button onclick="location.href='demo video.html'">Video</button></li>
-                <li><button onclick="location.href='detail projects.html'">Details</button></li>
-                <li class="made"><button onclick="location.href='made by.html'">Made by</button></li>
-            </ul>
+            <div id="menu">
+                <button onclick="location.href='index.html'"><image src="Picture/mini mini gym.png"></button>
+                <button onclick="location.href='source code.html'">Code</button>
+                <button onclick="location.href='demo video.html'">Video</button>
+                <button onclick="location.href='detail project.html'">Details</button>
+                <button id ="modalBtn"onclick="location.href='about us.html'">About Us</button>
+                <p id="title">Mini GYM Counter</p>
+            </div>
         </nav>
+        
     </header>
-    
-    <section id="home">
-        <h2>Welcome to My Arduino World</h2>
-        <p>Explore the exciting world of Arduino and electronics with us. Discover projects, tutorials, and more.</p>
-    </section>
 
-    <footer>
-        <p>&copy; 2023 My Arduino World</p>
-    </footer>
+    <section>
+        <h1 id="h1">Welcome to</h1>
+        <h2 id="welcome">Mini GYM Counter</h2>
+        <p>Explore the exciting world of Mini GYM Counter .</p>
+    </section>
+   
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Made by</h2>
+        <p></p>
+        <p id="p0">65070034</p>
+        <p id="p1">65070040</p>
+        <p id="p2">65070047</p>
+      </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; Mini GYM Counter</p>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("modalBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
 </body>
 </html>

@@ -3,26 +3,75 @@
     top: 0;
     left: 0;
 }
-
-.menu {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-.menu li {
-    display: inline;
-    margin-right: 10px;
-}
-
-.menu button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 35px;
-}
-.made {
-    position: absolute;
-    top: 32px;
+#title {
+    top: 20px;
     right: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #008184;
+}
+#h1 {
+    font-size: 100px;
+}
+#welcome {
+    font-size: 60px;
+}
+#menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-bottom: px solid #dee2e6;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   }
+   
+   /* Modal Content/Box */
+   .modal-content {
+    background-color: #fefefe;
+    margin-top: 20px;
+    margin: 20% auto; /* 15% from the top and centered */
+    padding: 20px;
+    /* border: 1px solid #888; */
+    width: 80%; /* Could be more or less, depending on screen size */
+   }
+   
+   /* The Close Button */
+   .close {
+    position: relative;
+    top:0px;
+    left: 705px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+   }
+   
+   .close:hover,
+   .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+   }
+#p0 { text-indent: 2em; }
+#p1 { text-indent: 2em; }
+#p2 { text-indent: 2em; }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
