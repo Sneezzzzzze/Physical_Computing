@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,46 +11,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
 </head>
 
+
 <body>
-    <header>
-        <nav>
-            <div id="menu">
-                <button onclick="location.href='index.html'"><image src="Picture/mini mini gym.png"></button>
-                <button onclick="location.href='source code.html'">Code</button>
-                <button onclick="location.href='demo video.html'">Video</button>
-                <button onclick="location.href='detail project.html'">Details</button>
-                <button id ="modalBtn"onclick="location.href='about us.html'">About Us</button>
-                <p id="title">Mini GYM Counter</p>
-            </div>
-        </nav>
-        
-    </header>
+  <div id="loading">
+    <img src="Picture/gif1.gif" alt="loading">
+</div>
+<div id="wrap" style="display: none;">
+  <header>
+    <nav>
+        <div id="menu">
+            <button onclick="location.href='index.html'"><image src="Picture/mini mini gym.png"></button>
+            <button onclick="location.href='source code.html'">Code</button>
+            <button onclick="location.href='demo video.html'">Video</button>
+            <button onclick="location.href='detail project.html'">Details</button>
+            <button id ="modalBtn"onclick="location.href='about us.html'">About Us</button>
+            <p id="title">Mini GYM Counter</p>
+        </div>
+    </nav>
+  </header>
 
-    <section>
-        <h1 id="h1">Welcome to</h1>
-        <h2 id="welcome">Mini GYM Counter</h2>
-        <p>Explore the exciting world of Mini GYM Counter .</p>
-    </section>
-   
+  <section>
+    <h1 id="h1">Welcome to</h1>
+    <h2 id="welcome">Mini GYM Counter</h2>
+    <p>Explore the exciting world of Mini GYM Counter .</p>
+  </section>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Made by</h2>
-        <p></p>
-        <p id="p0">65070034</p>
-        <p id="p1">65070040</p>
-        <p id="p2">65070047</p>
-      </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Made by</h2>
+      <p></p>
+      <p id="p0">65070034</p>
+      <p id="p1">65070040</p>
+      <p id="p2">65070047</p>
     </div>
+  </div>
 
-    <div class="footer">
-        <p>&copy; Mini GYM Counter</p>
-    </div>
+  <div class="footer">
+      <p>&copy; Mini GYM Counter</p>
+  </div>
+  </div>
+
+<script>
+    // Display loading GIF for 2 seconds
+    setTimeout(function () {
+        var loadingDiv = document.getElementById("loading");
+        var wrapDiv = document.getElementById("wrap");
+
+        loadingDiv.style.display = "none";
+        wrapDiv.style.display = "block";
+    }, 2000);
+</script>
+  
 
     <script>
       // Get the modal
