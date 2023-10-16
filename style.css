@@ -1,3 +1,9 @@
+.content {
+    height: 250vh; /* Set the height as needed */
+    overflow-y: auto; /* This will enable a vertical scrollbar when content overflows */
+    padding: 20px; /* Optional: Add padding for better styling */
+}
+
 .img {
     position: absolute;
     top: 0;
@@ -77,10 +83,12 @@
 
 .footer {
     display: none;
-    position: fixed;
-    left: 0;
+    position: absolute;
     bottom: 0;
     width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
     text-align: center;
 }
 

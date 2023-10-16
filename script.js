@@ -75,3 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const content = document.querySelector('.content');
+    const footer = document.querySelector('.footer');
+    
+    content.addEventListener('scroll', () => {
+        if (content.scrollTop + content.clientHeight >= content.scrollHeight) {
+            // User has scrolled to the bottom
+            footer.style.display = 'flex';
+        } else {
+            // User is not at the bottom
+            footer.style.display = 'none';
+        }
+    });
+});
