@@ -121,3 +121,10 @@
     font-family: 'Courier New', monospace;
     outline: none;
 }
+html {
+    scroll-behavior: smooth;
+  }
+.scrollable-div {
+    overflow-y: auto;
+    /* You can also use 'auto' to show scrollbars only when needed */
+  }
