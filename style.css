@@ -3,7 +3,9 @@
     overflow-y: auto; /* This will enable a vertical scrollbar when content overflows */
     padding: 20px; /* Optional: Add padding for better styling */
 }
-
+#margin {
+    margin-top: 80px;
+}
 .img {
     position: absolute;
     top: 0;
