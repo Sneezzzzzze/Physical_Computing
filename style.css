@@ -1,8 +1,10 @@
 .content {
-    height: 250vh; /* Set the height as needed */
-    overflow-y: auto; /* This will enable a vertical scrollbar when content overflows */
-    padding: 20px; /* Optional: Add padding for better styling */
+    height: 250vh; /*Set the height as needed*/
+    overflow-y: hidden; /* This will enable a vertical scrollbar when content overflows */
+    padding: 60px; /* Optional: Add padding for better styling */
+    scrollbar-width: thin;
 }
+
 #margin {
     margin-top: 80px;
 }
@@ -137,4 +139,4 @@ html {
 .scrollable-div {
     overflow-y: auto;
     /* You can also use 'auto' to show scrollbars only when needed */
-  }
+}

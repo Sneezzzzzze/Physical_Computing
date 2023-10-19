@@ -43,18 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function handleCommand(command) {
-        if (command === 'help') {
+        if (command === 'help' || command === '-h') {
             output.innerHTML += `<div>Available commands:</div>
-                                <div>- help: Display available commands</div>
-                                <div>- date: Show the current date and time</div>
-                                <div>- open: Open 'ProjectC.cpp' file</div>
-                                <div>- clear: Clear the command prompt</div>`;
-        } else if (command === 'date') {
-            const now = new Date();
-            output.innerHTML += `<div>${now}</div>`;
-        } else if (command === 'clear') {
+                                <div>- -h help: Display available commands</div>
+                                <div>- -o open: Open 'ProjectC.cpp' file</div>
+                                <div>- -c clear: Clear the command prompt</div>`;
+        } else if (command === 'clear' || command === '-c') {
             output.innerHTML = "";
-        } else if (command.startsWith('open')){
+        } else if (command.startsWith('open') || command.startsWith('-o')){
             openCFile('ProjectC.cpp');
         } else {
             output.innerHTML += `<div>Command not found: ${command}</div>`;
