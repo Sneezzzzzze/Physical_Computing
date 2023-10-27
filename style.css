@@ -1,5 +1,10 @@
 .content {
-    height: auto; /*Set the height as needed*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    height: auto; /* Set the height as needed */
     /* overflow-y: hidden; This will enable a vertical scrollbar when content overflows */
     padding: 60px; /* Optional: Add padding for better styling */
     /* scrollbar-width: thin; */
@@ -135,33 +140,38 @@
     margin-left: 20px; /* Adjust the margin as needed */
 }
 
-.image-container {
-    display: flex;
-    justify-content: space-around;
-}
-
-.image {
-    text-align: center;
-    margin-right: 20px;
-}
-
-.circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-}
-
-.circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .comment {
     margin-top: 20px;
 }
 .detail {
-    margin-left: 200px;
+    color: #008184;
+}
+
+.section {
+    text-align: center;
+    background-color: #008184;
+    padding: 40px;
+    color: white;
+}
+
+
+.circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px;
+}
+
+.image-text {
+    margin: 10px;
+    font-size: 18px;
+    color: white;
 }
