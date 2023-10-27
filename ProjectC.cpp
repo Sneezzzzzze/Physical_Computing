@@ -1,70 +1,73 @@
-int count = 0;
-int num1 = 0; int num2 = 0;
-int x[10][8] = {
-  {1, 1, 1, 1, 1, 1, 0, 0}, // 0
-  {0, 1, 1, 0, 0, 0, 0, 0}, // 1
-  {1, 1, 0, 1, 1, 0, 1, 0}, // 2
-  {1, 1, 1, 1, 0, 0, 1, 1}, // 3
-  {0, 1, 1, 0, 0, 1, 1, 0}, // 4
-  {1, 0, 1, 1, 0, 1, 1, 0}, // 5
-  {1, 0, 1, 1, 1, 1, 1, 0}, // 6
-  {1, 1, 1, 0, 0, 1, 0, 0}, // 7
-  {1, 1, 1, 1, 1, 1, 1, 0}, // 8
-  {1, 1, 1, 1, 0, 1, 1, 0}  // 9
-};
-int segPin[8] = {13, 12, 11, 10, 9, 8, 7};
-int segPinx[8] = {6, 5, 4, 14, 15, 16, 17};
-int switchs = 18;
-void setup() {
-  Serial.begin(9600);
-  pinMode(3, OUTPUT);   //Trig
-  pinMode(2, INPUT);    // Echo
-  pinMode(switchs, INPUT);
+#include <LiquidCrystal_I2C.h>
 
-  for(int i=0;i<10;i++){
-    pinMode(segPin[i], OUTPUT);
-    pinMode(segPinx[i], OUTPUT);
-  }
+LiquidCrystal_I2C lcd(0x27, 16, 2); // I2C address 0x27, 16 columns and 2 rows
+int squatCount = 0;
+int prevDistance = 0; // Variable to store the previous distance
+char input = '\0'; // Declare the input variable
+
+bool isCounting = false;
+
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(7, INPUT);
+  lcd.init();
+  lcd.backlight();
+  pinMode(3, OUTPUT); // Trig
+  pinMode(2, INPUT);  // Echo
+  lcd.setCursor(0, 0);
+  lcd.print("Welcome to");
+  lcd.setCursor(0, 1);
+  lcd.print("MiniGYM Counter");
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("--Press Start--");
 }
 
-void loop() {
+void loop() 
+{
   digitalWrite(3, HIGH);
   delayMicroseconds(10);
   digitalWrite(3, LOW);
 
   int pulseWidth = pulseIn(2, HIGH);
-  long distance = pulseWidth/29/2;
+  long distance = pulseWidth / 29 / 2;
+  /*Serial.print("Pulse Width: ");
+  Serial.println(pulseWidth);
+  Serial.print("Distance: ");
   Serial.println(distance);
+  delay(1000);*/
 
-  if ((distance >= 30) && distance <= 39) {
-    count++;
-  }
-  if (digitalRead(switchs) == HIGH) {
-    count = 0;
-    for (int i = 0; i < 8; i++) {
-      digitalWrite(segPin[i], x[0][i]);
+  if (digitalRead(7) == LOW) {
+      isCounting = true;
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Squat Count: ");
+      lcd.print(squatCount);
+    } if ((squatCount >= 1) && (digitalRead(7) == LOW)) {
+      isCounting = false;
+      squatCount = 0;
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Welcome to");
+      lcd.setCursor(0, 1);
+      lcd.print("MiniGYM Counter");
+      delay(2000);
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("--Press Start--");
+    }
+    
+    if (isCounting) {
+    if (distance >= 70 && distance <= 79 && prevDistance < 70) {
+        squatCount++;
+        lcd.setCursor(13, 0);
+        lcd.print(squatCount);
     }
   }
-  if (count <= 9) {
-    for (int i = 0; i < 8; i++) {
-      digitalWrite(segPin[i], x[0][i]);
-    }
-    for (int i = 0; i < 8; i++) {
-      digitalWrite(segPinx[i], x[count][i]);
-    }
-  } 
-  if (count >= 10) {
-    int ten = ceil((count % 100) / 10);
-    for (int i = 0; i < 8; i++) {
-      digitalWrite(segPin[i], x[ten][i]);
-    }
-    int digit = count % 10;
-    for (int i = 0; i < 8; i++) {
-      digitalWrite(segPinx[i], x[digit][i]);
-    }
-  }
-  delay(1000);
 
-  
+  prevDistance = distance; // Update the previous distance
 
+  delay(800);
 }
