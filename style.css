@@ -9,7 +9,14 @@
     padding: 60px; /* Optional: Add padding for better styling */
     /* scrollbar-width: thin; */
 }
-
+.poster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 60px;
+}
 #margin {
     margin-top: 80px;
 }
@@ -28,9 +35,11 @@
 }
 #h1 {
     font-size: 100px;
+    color: white;
 }
 #welcome {
     font-size: 60px;
+    color: white;
 }
 #menu {
     display: flex;
@@ -174,4 +183,7 @@
     margin: 10px;
     font-size: 18px;
     color: white;
+}
+.one {
+    background-color: #008184;
 }
